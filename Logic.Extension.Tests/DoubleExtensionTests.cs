@@ -29,6 +29,6 @@ namespace Extention.Tests
         [TestCase(2.22507385850720088902458687609E-308, ExpectedResult = "0000000000001111111111111111111111111111111111111111111111111111")]
         [TestCase(-2.22507385850720138309023271733E-308, ExpectedResult = "1000000000010000000000000000000000000000000000000000000000000000")]
         public string DoubleExtention_DoubleValue_ExpectedResult(double value)
-            => value.ToBinaryString();
+            => value.ToBinaryStringUnsafe();
     }
 }

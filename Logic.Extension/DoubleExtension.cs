@@ -6,7 +6,7 @@ namespace Extension
     {
         #region Public methods
         /// <summary>
-        /// Converts double value into string representation of a real number in the format IEEE 754
+        /// Converts double value into string representation of a real number in the format IEEE 754 by unsafe way
         /// </summary>
         /// <param name="value"> Value for converting </param>
         /// <returns> String representation of a real number in the format IEEE 754 </returns>
@@ -22,6 +22,11 @@ namespace Extension
             return GetBitsString(temp);
         }
 
+        /// <summary>
+        /// Converts double value into string representation of a real number in the format IEEE 754
+        /// </summary>
+        /// <param name="value"> Value for converting </param>
+        /// <returns> String representation of a real number in the format IEEE 754 </returns>
         public static string ToBinaryString(this double value)
         {
             var result = new DoubleLong();

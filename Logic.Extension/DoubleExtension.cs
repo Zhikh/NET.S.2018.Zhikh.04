@@ -4,16 +4,6 @@ namespace Extension
 {
     public static class DoubleExtension
     {
-        [StructLayout(LayoutKind.Explicit)]
-        private struct DoubleLong
-        {
-            [FieldOffset(0)]
-            public double AsDouble;
-
-            [FieldOffset(0)]
-            public long AsLong;
-        }
-
         #region Public methods
         /// <summary>
         /// Converts double value into string representation of a real number in the format IEEE 754
@@ -40,7 +30,7 @@ namespace Extension
             return GetBitsString(result.AsLong);
         }
         #endregion
-
+        
         #region Private methods
         private static string GetBitsString(long value)
         {
@@ -54,6 +44,18 @@ namespace Extension
             }
 
             return string.Concat(result);
+        }
+        #endregion
+
+        #region Structs
+        [StructLayout(LayoutKind.Explicit)]
+        private struct DoubleLong
+        {
+            [FieldOffset(0)]
+            public double AsDouble;
+
+            [FieldOffset(0)]
+            public long AsLong;
         }
         #endregion
     }
